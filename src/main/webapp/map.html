@@ -1,0 +1,53 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head><meta content="text/html; charset=UTF-8" http-equiv="content-type" /><title>Home</title></head>
+  <body class="lift:content_id=main">
+    <div id="main" class="lift:surround?with=default;at=content">
+
+      <script data-lift="AngularJS"></script>
+      <script id="liftmodules-ng_js"      data-lift="Angular"></script>
+
+      <script src="http://cdn.leafletjs.com/leaflet-0.7.1/leaflet.js"></script>
+      <link rel="stylesheet" href="http://cdn.leafletjs.com/leaflet-0.7.1/leaflet.css">
+  <script src="/js/angular-leaflet-directive.js"></script>
+<div ng-app="MapApp">
+
+<div ng-controller="MarkerController">
+    <leaflet markers="markers" center="hamburgCenter" width="640" height="400"></leaflet>
+
+<script>
+        var app = angular.module('MapApp', ['leaflet-directive', 'lift.cs']);
+        
+        
+app.controller("MarkerController", [ '$scope', 'csService', function($scope, csService) {
+    $scope.markers = csService.marker();
+    angular.extend($scope, {
+        hamburgCenter: {
+            lat: 53.55,
+            lng: 10.00,
+            zoom: 11
+        },
+//        markers: $scope.bmarkers,
+        defaults: {
+            scrollWheelZoom: false
+        }
+    });
+/*    $scope.$watch('bmarkers', function(e, obj) {
+        console.log("changing markers");
+        $scope.bmarkers = obj;
+        console.log($scope.bmarkers);
+    }); */
+}]);
+</script>
+
+<script data-lift="ChargingStationService"></script>
+<div data-lift="comet?type=CsActor"></div>
+        <input type="button" value="Comet" id="button-comet" data-lift="Snips.renderCSButton"/>
+
+</div>
+
+</div>
+    </div>
+  </body>
+</html>
+

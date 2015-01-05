@@ -1,0 +1,50 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head><meta content="text/html; charset=UTF-8" http-equiv="content-type" /><title>Home</title></head>
+  <body class="lift:content_id=main">
+    <div id="main" class="lift:surround?with=default;at=content">
+      <script data-lift="AngularJS"></script>
+      <script id="liftmodules-ng_js"  data-lift="Angular?futures=on"></script>
+      <script id="futureServices_js"  type="text/javascript"  data-lift="FutureSnips.services"></script>
+      <script id="futureApp_js"       src="/js/FutureApp.js"  type="text/javascript"></script>
+
+      <h2>Future tests</h2>
+      <div ng-app="FutureApp" class="application">
+        <div data-lift="embed?what=ready"></div>
+        <div ng-controller="NoArgController">
+          <input id="no-arg-button" type="button" value="No Arg" ng-click="click()"/>
+          <span id="no-arg-output" ng-bind="output">Hard-coded</span>
+        </div>
+        <div ng-controller="FailureController">
+          <input id="failure-button" type="button" value="Failure" ng-click="click()"/>
+          <span id="failure-output" ng-bind="output">Hard-coded</span>
+        </div>
+        <div ng-controller="StringArgController">
+          <input id="string-input" type="text" ng-model="input"/>
+          <input id="string-button" type="button" value="String Arg" ng-click="click()"/>
+          <span id="string-output" ng-bind="output">Hard-coded</span>
+        </div>
+        <div ng-controller="JsonTestController">
+          <input id="json-input-a" type="text" ng-model="inputA"/>
+          <span id="json-output-a" ng-bind="outputA">OutputA</span>
+          <input id="json-input-b" type="text" ng-model="inputB"/>
+          <span id="json-output-b" ng-bind="outputB">OutputB</span>
+          <input id="json-button" type="button" value="Test" ng-click="click()"/>
+        </div>
+        <div ng-controller="EmptyResponseController">
+          <input id="empty-button" type="button" value="Empty" ng-click="click()"/>
+          <span id="empty-output" ng-bind="output">Hard-coded</span>
+        </div>
+        <div ng-controller="SatisfiedTestController">
+          <input id="satisfied-button" type="button" value="Satisfied" ng-click="click()"/>
+          <span id="satisfied-output" ng-bind="output">Hard-coded</span>
+        </div>
+        <div ng-controller="ScalaFutureController">
+          <input id="scala-future-button" type="button" value="Scala Future" ng-click="click()"/>
+          <span id="scala-future-output" ng-bind="output">Hard-coded</span>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
+

@@ -1,0 +1,6 @@
+.idea/
+*.iml
+target/
+atlassian-ide-plugin.xml
+src/main/webapp/js/lib
+*.log
